@@ -1,9 +1,9 @@
-import { store } from "../store";
+import { productsStore } from "../store";
 
 export const Header = () => (
   <div
     className="header"
-    onClick={store.increaseHeaderClicks}
+    onClick={productsStore.increaseHeaderClicks}
   >
     <h1>Your cart</h1>
     <p>"I say let the world go to hell, but I should always have my tea."</p>

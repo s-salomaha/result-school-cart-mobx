@@ -1,5 +1,5 @@
 import { IProduct } from "../types/IProduct";
-import { store } from "../store";
+import { productsStore } from "../store";
 import { observer } from "mobx-react-lite";
 
 interface IProductProps {
@@ -26,13 +26,13 @@ export const Product = observer(({ product }: IProductProps) => {
             <div className="product-interactions">
                 <div
                   className="button plus"
-                  onClick={() => store.increaseQuantity(product.id)}
+                  onClick={() => productsStore.increaseQuantity(product.id)}
                 >
                   +
                 </div>
                 <div
                   className="button minus"
-                  onClick={() => store.decreaseQuantity(product.id)}
+                  onClick={() => productsStore.decreaseQuantity(product.id)}
                 >
                   -
                 </div>

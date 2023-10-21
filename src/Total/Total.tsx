@@ -1,8 +1,8 @@
-import { store } from "../store";
+import {orderStore, productsStore} from "../store";
 import { observer } from "mobx-react-lite";
 
 export const Total = observer(() => {
-    const total = store.total
+    const total = productsStore.total
 
     return <table className="bill">
         <tbody>
@@ -22,6 +22,8 @@ export const Total = observer(() => {
                 <td colSpan={2} className="button-cell">
                     <button
                       className="main-button"
+                      onClick={orderStore.createOrder}
+                      disabled={orderStore.status === 'pending'}
                     >
                         Buy
                     </button>
